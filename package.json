@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "node scripts/build.js",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "serve": "vue-cli-service serve"
+    "serve": "vue-cli-service serve",
+    "watch": "onchange 'src/**/*.js' 'src/**/*.vue' -- npm run build"
 
   },
   "dependencies": {
