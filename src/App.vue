@@ -2,6 +2,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
 import Index from './components/Index/index.vue'
+import CssVue from './components/CssVue/CssVue.vue'
 </script>
 
 <template>
@@ -10,12 +11,13 @@ import Index from './components/Index/index.vue'
 
     <div class="wrapper">
       <!-- <HelloWorld msg="You did it!" /> -->
+      <!-- <CssVue /> -->
     </div>
   </header>
 
   <main>
     <!-- <TheWelcome /> -->
-    <Index />
+    <!-- <Index /> -->
   </main>
 </template>
 
