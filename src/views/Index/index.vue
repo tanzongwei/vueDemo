@@ -1,6 +1,10 @@
 <script lang="ts">
+import FooterVue from './footer.vue'
 
 export default {
+    components: {
+        FooterVue
+    },
     data() {
         return {
             // isShow: false
@@ -17,8 +21,14 @@ export default {
                 {text:'three',value:'C'}
             ],
             dynaSelect:'A',
-            age: 16
+            age: 16,
+            list: ['one','two','three'],
+            postFontSize:1
         }
+    },
+    mounted() {
+        // console.log(this.$refs.input.focus())
+        console.log(this.$refs.items)
     },
     methods: {
         jump() {
@@ -102,6 +112,22 @@ export default {
         <div>
             <p>age:{{ age }}</p>
             <input v-model.number="age" type="text" placeholder="请输入年龄" />
+        </div>
+        <div>
+            <p>refs的使用</p>
+            <ul>
+                <li v-for="(item,index) in list" :key="index" ref="items">
+                    {{ item }}
+                </li>
+            </ul>
+        </div>
+
+        <div style="{font-size: postFontSize + 'em'}">
+            <p> 组件测试 </p>
+            <FooterVue @enlarge-text="postFontSize += 0.1" title="这是组件一" ref="footer" /> 
+            <FooterVue title="这是组件二" ref="footer" /> 
+            <FooterVue title="这是组件三" :key="333" ref="footer" /> 
+            <footer-vue title="这是组件四">这是什么鬼</footer-vue>
         </div>
     </div>
 </template>

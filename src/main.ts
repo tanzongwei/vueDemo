@@ -1,6 +1,15 @@
-import './assets/main.css'
 
 import { createApp } from 'vue'
-// import App from './components/Index/index.vue'
-import App from './components/Index/music.vue'
-createApp(App).mount('#app')
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+app.use(router)
+
+router.beforeEach((to: { meta: { title: string } }, from: any, next: () => void) => {
+  document.title = to.meta.title || 'Default Title'
+  next()
+})
+
+app.mount('#app')

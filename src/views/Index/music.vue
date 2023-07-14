@@ -10,9 +10,6 @@ export default {
 </script>
 
 <template>
-    <header>
-        <title>测试</title>
-    </header>
         <div class="hot clearfix">
             <h3><span>热门</span>榜单<a href="http://localhost:5173/" target="_block">更多</a></h3> 
 
