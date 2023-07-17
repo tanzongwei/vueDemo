@@ -1,9 +1,19 @@
+@import  from '@/assets/iconfont/iconfont.cs'
 <script>
 export default {
     props:['name'],
+    emits:['persion-message','update-password','loginOut'],
     data() {
         return {
-
+            isShow: false,
+        }
+    },
+    methods: {
+        mouseenterName() {
+            this.isShow = true
+        },
+        mouseenterLeaveName() {
+            this.isShow = false
         }
     }
 }
@@ -12,29 +22,35 @@ export default {
 <template>
     <div class="nav">
         <img src="@/assets/logo.jpg" alt="">
-        <a href="#">
-            <div class="name">
+            <div class="name clearFix" 
+            @mouseover="mouseenterName" 
+            @mouseleave="mouseenterLeaveName">
                 <img src="@/assets/headerImage.png" alt="">
                 <p>{{ name }}</p>
-            </div>
-        </a>
-        <div class="cover">
-            <div class="triangle"></div>
-            <ul>
-                <li>
-                    <img src="" alt="">
-                    <p>个人资料</p>
-                </li>
-                <li>
-                     <img src="" alt="">
-                     <p>修改密码</p>
-                </li>
-                <li> 
-                    <img src="" alt="">
-                    <p>退出登录</p>
-                </li>
-            </ul>
-        </div>
+                <div class="cover" v-if="isShow">
+                    <div class="triangle"></div>
+                    <ul>
+                        <li @click="$emit('persion-message')">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-gerenziliao"></use>
+                            </svg>
+                            <p>个人资料</p>
+                        </li>
+                        <li @click="$emit('update-password')">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiugaimima"></use>
+                            </svg>
+                            <p>修改密码</p>
+                        </li>
+                        <li @click="$emit('loginOut')"> 
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-tuichudenglu"></use>
+                            </svg>
+                            <p>退出登录</p>
+                        </li>
+                    </ul>
+                </div>
+         </div>
     </div>
 </template>
 
@@ -58,13 +74,18 @@ export default {
         float: right;
         height: 44px;
     }
+    .clearFix{
+        content: "";
+        display: block;
+        clear: both;
+    }
     .nav .name img{
         width: 28px;
         height: 28px;
         padding-top: 8px;
         margin-right: 0.8em;
     }
-    .nav .name :last-child{
+    .nav .name :nth-child(2){
         margin: 0;
         padding-right: 2em;
         font-size: 0.5em;
@@ -73,7 +94,7 @@ export default {
         line-height: 44px;
         color: #666;
     }
-    .nav .cover{
+     .cover{
         background-color: #ffffff;
         width: 126px;
         height: 140px;
@@ -81,8 +102,9 @@ export default {
         right: 2.0em;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         top: 46px;
+        border-radius: 5px;
     }
-    .nav .cover .triangle{
+     .cover .triangle{
         width: 0;
         height: 0;
         border-left: 5px solid transparent;
@@ -93,11 +115,28 @@ export default {
         right: 50px;
     }
 
-    .nav .cover ul{
+     .cover ul{
         list-style: none;
     }
-    .nav .cover ul li {
+     .cover ul li {
         height: 44px;
         font-size: 0.8em;
+        text-align: center;
     }
+      .icon {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+        overflow: hidden;
+        line-height: 44px;
+        margin-right: 10px;
+        margin-top: 12px;
+
+    }
+    .nav .cover ul li p {
+        color: black;
+        margin: 0;
+        line-height: 44px;
+    }
+
 </style>

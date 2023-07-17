@@ -12,6 +12,7 @@
     "watch": "onchange 'src/**/*.js' 'src/**/*.vue' -- npm run build"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "core-js": "^3.8.3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
