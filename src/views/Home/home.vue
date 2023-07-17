@@ -1,13 +1,16 @@
 <script>
 import Nav from '@/components/nav/nav.vue'
+import LeftMenu from '../LeftMenu/leftMenu.vue'
 export default{
     name: "home",
     components: {
-        Nav
+        Nav,
+        LeftMenu
     },
     data() {
         return {
-            name: '风云无双'
+            name: '风云无双',
+            leftTitle: ['测试1','测试2','测试3']
         }
     },
     methods: {
@@ -19,6 +22,9 @@ export default{
         },
         loginOut() {
             alert("确定要退出登录吗？")
+        },
+        clickLeftList(index) {
+            console.log('当前下标:',index)
         }
     }
 }
@@ -27,6 +33,7 @@ export default{
 <template>
     <div class="home">
         <Nav :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/>
+        <LeftMenu :titles="leftTitle" @click-list="clickLeftList" />
     </div>
 </template>
 
