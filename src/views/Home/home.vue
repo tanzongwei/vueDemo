@@ -1,16 +1,25 @@
 <script>
-import Nav from '@/components/nav/nav.vue'
+import NavBar from '@/components/nav/nav.vue'
 import LeftMenu from '../LeftMenu/leftMenu.vue'
+import MainContent from '../Music/music.vue'
 export default{
     name: "home",
     components: {
-        Nav,
-        LeftMenu
+        NavBar,
+        LeftMenu,
+        MainContent
     },
     data() {
         return {
             name: '风云无双',
-            leftTitle: ['测试1','测试2','测试3']
+            leftTitle: ['测试1','测试2','测试3'],
+            contents:[
+                {'id':1,'sort':'排行','name':'歌曲','auther':'歌手','totalTime':'时长'},
+                {'id':1,'sort':'排行','name':'歌曲','auther':'歌手','totalTime':'时长'},
+                {'id':1,'sort':'排行','name':'歌曲','auther':'歌手','totalTime':'时长'},
+                {'id':1,'sort':'排行','name':'歌曲','auther':'歌手','totalTime':'时长'},
+                {'id':1,'sort':'排行','name':'歌曲','auther':'歌手','totalTime':'时长'}
+        ]
         }
     },
     methods: {
@@ -24,7 +33,9 @@ export default{
             alert("确定要退出登录吗？")
         },
         clickLeftList(index) {
-            console.log('当前下标:',index)
+            if (index == 0) {
+                
+            }
         }
     }
 }
@@ -32,8 +43,9 @@ export default{
 
 <template>
     <div class="home">
-        <Nav :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/>
-        <LeftMenu :titles="leftTitle" @click-list="clickLeftList" />
+        <NavBar :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/>
+        <!-- <LeftMenu :titles="leftTitle" @click-list="clickLeftList" style="flex: 1;" /> -->
+        <MainContent :contents="contents" />
     </div>
 </template>
 
