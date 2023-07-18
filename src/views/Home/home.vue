@@ -2,12 +2,14 @@
 import NavBar from '@/components/nav/nav.vue'
 import LeftMenu from '../LeftMenu/leftMenu.vue'
 import MainContent from '../Music/music.vue'
+import JsStudy from '../JQuery/jquery.vue'
 export default{
     name: "home",
     components: {
         NavBar,
         LeftMenu,
-        MainContent
+        MainContent,
+        JsStudy
     },
     data() {
         return {
@@ -45,7 +47,8 @@ export default{
     <div class="home">
         <NavBar :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/>
         <!-- <LeftMenu :titles="leftTitle" @click-list="clickLeftList" style="flex: 1;" /> -->
-        <MainContent :contents="contents" />
+        <!-- <MainContent :contents="contents" /> -->
+        <JsStudy :title="js学习"/>
     </div>
 </template>
 
