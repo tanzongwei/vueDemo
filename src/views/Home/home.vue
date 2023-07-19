@@ -4,6 +4,7 @@ import LeftMenu from '../LeftMenu/leftMenu.vue'
 import MainContent from '../Music/music.vue'
 import JsStudy from '../JQuery/jquery.vue'
 import Flex from '../Index/flex.vue'
+import FlexStudy from '../Index/FlexStudy.vue'
 export default{
     name: "home",
     components: {
@@ -11,7 +12,8 @@ export default{
         LeftMenu,
         MainContent,
         JsStudy,
-        Flex
+        Flex,
+        FlexStudy
     },
     data() {
         return {
@@ -51,7 +53,8 @@ export default{
         <!-- <LeftMenu :titles="leftTitle" @click-list="clickLeftList" style="flex: 1;" /> -->
         <!-- <MainContent :contents="contents" /> -->
         <!-- <JsStudy :title="js学习"/> -->
-        <Flex />
+        <!-- <Flex /> -->
+        <FlexStudy />
     </div>
 </template>
 
