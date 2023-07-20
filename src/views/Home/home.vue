@@ -6,6 +6,7 @@ import JsStudy from '../JQuery/jquery.vue'
 import Flex from '../Index/flex.vue'
 import FlexStudy from '../Index/FlexStudy.vue'
 import AnimateLoad from '../Index/animateLoad.vue'
+import Scene from '../Index/scene.vue'
 export default{
     name: "home",
     components: {
@@ -15,7 +16,8 @@ export default{
         JsStudy,
         Flex,
         FlexStudy,
-        AnimateLoad
+        AnimateLoad,
+        Scene
     },
     data() {
         return {
@@ -57,7 +59,8 @@ export default{
         <!-- <JsStudy :title="js学习"/> -->
         <!-- <Flex /> -->
         <!-- <FlexStudy /> -->
-        <AnimateLoad />
+        <!-- <AnimateLoad /> -->
+        <Scene />
     <!-- </div> -->
 
 </template>
