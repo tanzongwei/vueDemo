@@ -7,6 +7,8 @@ import Flex from '../Index/flex.vue'
 import FlexStudy from '../Index/FlexStudy.vue'
 import AnimateLoad from '../Index/animateLoad.vue'
 import Scene from '../Index/scene.vue'
+import FixKuGouMusicList from '../Index/fixKuGouMusicList.vue'
+import HeadTop from '../Index/headTop.vue'
 export default{
     name: "home",
     components: {
@@ -17,7 +19,9 @@ export default{
         Flex,
         FlexStudy,
         AnimateLoad,
-        Scene
+        Scene,
+        FixKuGouMusicList,
+        HeadTop
     },
     data() {
         return {
@@ -60,7 +64,9 @@ export default{
         <!-- <Flex /> -->
         <!-- <FlexStudy /> -->
         <!-- <AnimateLoad /> -->
-        <Scene />
+        <!-- <Scene /> -->
+        <!-- <FixKuGouMusicList /> -->
+        <HeadTop />
     <!-- </div> -->
 
 </template>
