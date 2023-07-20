@@ -5,6 +5,7 @@ import MainContent from '../Music/music.vue'
 import JsStudy from '../JQuery/jquery.vue'
 import Flex from '../Index/flex.vue'
 import FlexStudy from '../Index/FlexStudy.vue'
+import AnimateLoad from '../Index/animateLoad.vue'
 export default{
     name: "home",
     components: {
@@ -13,7 +14,8 @@ export default{
         MainContent,
         JsStudy,
         Flex,
-        FlexStudy
+        FlexStudy,
+        AnimateLoad
     },
     data() {
         return {
@@ -48,20 +50,27 @@ export default{
 </script>
 
 <template>
-    <div class="home">
-        <NavBar :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/>
+    <!-- <div class="home"> -->
+        <!-- <NavBar :name="name" @persion-message="persionMessage" @update-password="updatePassword" @loginOut="loginOut"/> -->
         <!-- <LeftMenu :titles="leftTitle" @click-list="clickLeftList" style="flex: 1;" /> -->
         <!-- <MainContent :contents="contents" /> -->
         <!-- <JsStudy :title="js学习"/> -->
         <!-- <Flex /> -->
-        <FlexStudy />
-    </div>
-</template>
+        <!-- <FlexStudy /> -->
+        <AnimateLoad />
+    <!-- </div> -->
 
+</template>
 <style scoped>
+    body{
+        margin: 0;
+        padding: 0;
+    }
     .home {
+        margin: 0;
         width: 100%;
-        height: 1500px;
+        height: 100vh;
         background-color: #eff4f3;
+
     }
 </style>
